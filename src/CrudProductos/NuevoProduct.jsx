@@ -12,6 +12,7 @@ const NuevoProduct = () => {
     const [precio_producto, setprecio_Producto] = useState('');
     const [cantidad_producto, setcantidad_Producto] = useState('');
     const [Id_categoria, setId_categoria] = useState('');
+    const [nombre_categoria, setNombre_categoria] = useState('');
 
     const verProductos = () => {
         axios.get("http://localhost:3001/productos")
@@ -80,9 +81,9 @@ const NuevoProduct = () => {
                     </div>
                 </div>
             </div>
-            <table className='table table-striped'>
+            <table className='table table-striped table-hover mt-5 shadow-lg'>
                 <thead>
-                    <tr>
+                    <tr className='table-info'>
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Descripcion</th>
@@ -100,7 +101,7 @@ const NuevoProduct = () => {
                                 <td>{val.descripcion_producto}</td>
                                 <td>{val.precio_producto}</td>
                                 <td>{val.cantidad_producto}</td>
-                                <td>{val.Id_categoria}</td>
+                                <td>{val.nombre_categoria}</td>
                             </tr>
                         ))
                     }

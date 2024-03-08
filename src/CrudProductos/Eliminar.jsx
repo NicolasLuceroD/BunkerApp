@@ -8,6 +8,7 @@ const Eliminar = () => {
 
     const [ver, setVer] = useState([]);
     const [Id_producto, setId_Producto] = useState('');
+    const [nombre_categoria, setNombre_categoria] = useState('');
     
     const verProductos = () => {
         axios.get("http://localhost:3001/productos")
@@ -78,9 +79,9 @@ const Eliminar = () => {
 
         </div>
         <br />
-        <table className='table table-striped'>
+        <table className='table table-striped table-hover mt-5 shadow-lg'>
                 <thead>
-                    <tr>
+                    <tr className='table-info'>
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Descripcion</th>
@@ -98,10 +99,10 @@ const Eliminar = () => {
                                 <td>{val.descripcion_producto}</td>
                                 <td>{val.precio_producto}</td>
                                 <td>{val.cantidad_producto}</td>
-                                <td>{val.Id_categoria}</td>
-                                <div className='btn-group' role='group' aria-label="Basic example">
-                                     <button type='button' className='btn btn-info m-2' onClick={() => eliminarProducto(val.Id_producto)}> Eliminar </button>
-                                </div>
+                                <td>{val.nombre_categoria}</td>
+                                <td className='btn-group' role='group' aria-label="Basic example">
+                                     <Button type='button' className='btn btn-danger m-1' onClick={() => eliminarProducto(val.Id_producto)}> Eliminar </Button>
+                                </td>
                             </tr>
                         ))
                     }

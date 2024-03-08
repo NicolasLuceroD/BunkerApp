@@ -1,4 +1,4 @@
-const {connection} = require ('../database/config')
+const {connection} = require("../database/config")
 
 const verCategoria =(req,res)=>{
     connection.query('SELECT * FROM Categoria',
@@ -45,4 +45,4 @@ const eliminarCategoria = (req,res) =>{
     })
 }
 
-module.exports= {verCategoria,crearCategoria,editarCategoria,eliminarCategoria}
+module.exports= {verCategoria, crearCategoria, editarCategoria, eliminarCategoria}

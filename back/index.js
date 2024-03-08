@@ -7,6 +7,7 @@ const {connection} = require('./database/config')
 const Productos =require('./routes/Producto')
 const Categoria = require('./routes/Categoria')
 const Cliente = require('./routes/Cliente')
+const Venta = require('./routes/Venta')
 
 
 const app=express()
@@ -17,6 +18,8 @@ app.use(cors())
 app.use('/',Productos)
 app.use('/',Categoria)
 app.use('/',Cliente)
+app.use('/', Venta)
+
 
 
 app.listen(3001)

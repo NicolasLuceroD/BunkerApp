@@ -27,9 +27,6 @@ export default function Productos() {
             <Link to="/ventasPeriodo">Ventas por periodo</Link>
             </div>
             <div className='col-xl'>
-            <Link to="/promociones">Promociones</Link>
-            </div>
-            <div className='col-xl'>
             <Link to="/">Importar</Link>
             </div>
             <div className='col-xl'>

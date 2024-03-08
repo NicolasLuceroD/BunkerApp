@@ -5,6 +5,7 @@
   text-align: center;
 }
 
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +40,12 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.bg-curso {
+  background-color: #8540f5 !important;
+}
+
+.cabeceraTabla{
+  background-color: #8540f5 !important;
 }

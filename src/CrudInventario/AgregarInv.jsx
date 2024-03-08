@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Inventario from "../components/Inventario";
 import { Button, Dropdown } from "react-bootstrap";
 
 function AgregarInv() {
-
-
 
   return (
     <>

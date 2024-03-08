@@ -1,12 +1,19 @@
 const {connection} = require ('../database/config')
+
  
 const verProductos =(req,res)=>{
-    connection.query('SELECT * FROM Producto',
+    connection.query('SELECT p.Id_producto, p.nombre_producto, p.descripcion_producto, p.precio_producto, p.cantidad_producto, c.nombre_categoria, c.descripcion_categoria FROM Producto p  INNER JOIN Categoria c  ON p.Id_categoria = c.Id_categoria',
     (error,results)=>{
         if(error)throw error
         res.json(results)
     })
 }
+
+
+
+
+
+
 
 
 const crearProductos = (req,res) =>{
@@ -58,4 +65,27 @@ const eliminarProductos = (req,res) =>{
     )
 }
 
-module.exports= {verProductos,crearProductos,editarProductos,eliminarProductos}
+
+const ProductoList = (req,res) =>{
+    const nombre_producto = req.query.nombre_producto
+    if(!nombre_producto){
+        res.status(400).sed("falta el producto capo")
+        return;
+    }
+
+    db.query("SELECT Id_producto, nombre_producto, descripcion_producto, precio_producto, catindad_producto WHERE nombre_producto = ?" ,[nombre_producto],
+    (err,result)=>{if (err) {
+        console.log(err);
+        res.status(500).send("Error al buscar el producto.");
+      } else {
+        if (result.length === 0) {
+          res.status(404).send("Producto no encontrado.");
+        } else {
+          res.send(result[0]); 
+        }
+      }
+    });
+}
+
+
+module.exports= {verProductos,crearProductos,editarProductos,eliminarProductos,ProductoList}

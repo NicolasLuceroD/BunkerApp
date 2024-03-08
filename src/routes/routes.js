@@ -15,7 +15,6 @@ export const nuevoProducto = "/nuevoProducto"
 export const editarProducto = "/editarProducto"
 export const eliminarProducto = "/eliminarProducto"
 export const catalogo = "/catalogo"
-export const promociones ="/promociones"
 export const departamentos = "/departamentos"
 export const ventaxPeriodo ="/ventasPeriodo"
 

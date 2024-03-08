@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { reportMovimientos, promociones,bajoInventario, ventaxPeriodo,departamentos, compra, corte, ventas, cliente, productos, reportes, facturas, creditos, inventario, configuracion, nuevoProducto, editarProducto, eliminarProducto, catalogo, agregarInventario, ajustesInventario, reportesInventario, estadoCuenta, reporteSaldos, nuevoCliente,editarCliente,eliminarCliente} from './routes/routes.js'
+import { reportMovimientos,bajoInventario, ventaxPeriodo,departamentos, compra, corte, ventas, cliente, productos, reportes, facturas, creditos, inventario, configuracion, nuevoProducto, editarProducto, eliminarProducto, catalogo, agregarInventario, ajustesInventario, reportesInventario, estadoCuenta, reporteSaldos} from './routes/routes.js'
 import Clientes from './components/Clientes.jsx'
 import Venta from "./components/Venta.jsx"
 import Compra from './components/Compras.jsx'
@@ -18,7 +18,6 @@ import NuevoProduct from "./CrudProductos/NuevoProduct.jsx"
 import Eliminar from "./CrudProductos/Eliminar.jsx"
 import Editar from "./CrudProductos/Editar.jsx"
 import Departamentos from "./CrudProductos/Departamento/Departamento.jsx"
-import Promociones from "./CrudProductos/Promociones.jsx"
 import VentasXPeriodo from "./CrudProductos/VentasXPeriodo.jsx"
 import Catalogo from "./CrudProductos/Catalago.jsx"
 import AgregarInv from './CrudInventario/AgregarInv.jsx'
@@ -28,14 +27,11 @@ import ReportesInv from './CrudInventario/ReportesInv.jsx'
 import ReportMovimientos from './CrudInventario/ReportMovimientos.jsx'
 import EstadoCuenta from './CrudCreditos/EstadoCuenta.jsx'
 import ReporteSaldos from './CrudCreditos/ReporteSaldos.jsx'
-import NuevoCliente from './CrudClientes/NuevoCliente.jsx'
-import EditarCliente from './CrudClientes/EditarCliente.jsx'
-import EliminarCliente from './CrudClientes/EliminarCliente.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  //<React.StrictMode>
   
     <BrowserRouter>
         <Routes>
@@ -56,7 +52,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={editarProducto} element={<Editar/>}/>
           <Route path={eliminarProducto} element={<Eliminar/>}/>
           <Route path={catalogo} element={<Catalogo/>}/>
-          <Route path={promociones} element={<Promociones/>}/>
           <Route path={ventaxPeriodo} element={<VentasXPeriodo/>}/>
           <Route path={departamentos} element={<Departamentos/>}/>
 
@@ -73,12 +68,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={reporteSaldos} element={<ReporteSaldos/>}/>
 
            {/* CLIENTES*/}
-           <Route path={nuevoCliente} element={<NuevoCliente/>}/>
-           <Route path={editarCliente} element={<EditarCliente/>}/>
-           <Route path={eliminarCliente} element={<EliminarCliente/>}/>
 
       </Routes>
     </BrowserRouter>
    
-  </React.StrictMode>,
+  //</React.StrictMode>,
 )

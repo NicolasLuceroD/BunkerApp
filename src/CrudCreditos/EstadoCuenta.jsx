@@ -1,14 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Creditos from '../components/Creditos'
 import { Button, Dropdown, Table } from 'react-bootstrap'
+import axios from 'axios';
 
 export default function EstadoCuenta() {
+
+  // const[nombre_cliente,setNombreCliente] = useState("");
+  // const[ver,setVer] = ([]);
+
+
+  // const verClientes = () =>{
+  //   axios.get("http://localhost:3001/cliente").then((response) =>{
+  //    setVer(response.data)
+  //  }); }
+
+
+
+
+
+
+//    useEffect(() => {
+//     verClientes()
+//  },[])
+
   return (
     <>
     <Creditos/>
     <br /> <br />
-    <h4>Nombre Ciente:</h4>
-          
+  
+          <h3>Nombre del cliente:</h3>
+
             <Button variant='info'>Abonar a deuda</Button>
             <Button variant='danger'>Liquidar</Button>
             <Button variant='warning'>Imprimir estado de Cuenta</Button>

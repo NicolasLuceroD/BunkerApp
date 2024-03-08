@@ -1,0 +1,48 @@
+
+
+//PRODUCTOS 
+const [Id_producto, setId_producto] = useState("")
+const [nombre_producto, setNombreProducto] = useState("")
+const [descripcion_producto, setDescripcionProducto] = useState("")
+const [precio_producto, setPrecioProducto] = useState("")
+const [cantidad_producto, setCantidadProducto] = useState("")
+
+//VENTA
+const [Id_venta, setIdVenta] = useState("")
+const [drescripcion_venta, setDescripcion_venta] = ("")
+const [precioTotal_venta, setPrecioTotal] = ("")
+
+//CLIENTES
+const [Id_cliente, setIdCliente] = useState("")
+const [nombre_cliente, setNombre_cliente] = useState("")
+const [apellido_cliente, setApellido_cliente] = useState("")
+const [telefono_cliente, setTelefonoCliente] = useState("")
+const [correo_cliente, setCorreoCliente] = useState("")
+const [codigoPostal_cliente, setCodigoPostal] = useState("")
+const [domicilio_cliente, setDomicilio_cliente] = useState("")
+const [ciudad_cliente, setCiudad_cliente] = useState("")
+
+  // const AgregarProducto = () => {
+  //   axios.get(`http://localhost:3001/productos`).then((response) => {
+  //     const product = response.data;
+  
+  //     if (product) {
+  //       const nuevoProducto = {
+  //         Id_producto: product[0].Id_producto, 
+  //         nombre_producto: product[0].nombre_producto, 
+  //         descripcion_producto: product[0].descripcion_producto, 
+  //         precio_producto: product[0].precio_producto, 
+  //         cantidad_producto: product[0].cantidad_producto, 
+  //         subTotal: product[0].precio_producto * product.cantidad_producto 
+  //       };
+  //       setProductosList([...productosList, nuevoProducto]);
+  //     } else {
+  //       console.log('ERROR NO EXISTE ');
+  //     }
+  //   });
+  // };
+
+
+
+
+

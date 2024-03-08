@@ -7,9 +7,10 @@ import React, { useState, useEffect } from 'react';
 const Departamento = () => {
 
   const [verCategoria,setVerCategoria] = useState([])
-  const [Id_categoria,setIdCategoria] = useState ('')
+  const [Id_categoria,setIdCategoria] = useState ("")
   const [nombre_categoria, setNombreCategoria] = useState('')
   const [descripcion_categoria, setdescripcionCategoria] = useState('')
+
 
 
   const seeCategoria = () => {
@@ -32,6 +33,7 @@ const Departamento = () => {
   }
 
 
+
   const editarCategoria = () => {
     axios.put(`http://localhost:3001/categorias/put/${Id_categoria}`,
     {
@@ -46,7 +48,10 @@ const Departamento = () => {
     })
   }
 
+
+
   const updateCategoria = (val) =>{
+   setIdCategoria(val.Id_categoria)
    setNombreCategoria(val.nombre_categoria)
    setdescripcionCategoria(val.descripcion_categoria)
   }
@@ -63,8 +68,6 @@ const Departamento = () => {
     })
   }
 
-
-
   useEffect(()=>{
     seeCategoria()
   },[])
@@ -80,6 +83,11 @@ const Departamento = () => {
                      <h2>Departamentos:</h2>   
                 </div>
             </div>
+            {/* <div className= "row">
+                <div className= "col">
+                     ID <input type="text" value={Id_categoria} onChange={(e)=> setIdCategoria(e.target.value)}/>
+                </div>
+            </div> */}
             <div className= "row">
                 <div className= "col">
                      Nombre <input type="text" value={nombre_categoria} onChange={(e)=> setNombreCategoria(e.target.value)}/>
@@ -121,24 +129,20 @@ const Departamento = () => {
                       <td>{val.Id_categoria}</td>
                       <td>{val.nombre_categoria}</td>
                       <td>{val.descripcion_categoria}</td>
-                      <div className= 'btn-group'>
-                        <Button onClick={()=>{updateCategoria(val)}}>Ver Categoria</Button>  
-                      </div>
-                      <div className= "col">
-                        <Button onClick={eliminarCategoria}>Eliminar</Button>  
-                      </div>
+                        <td className="col">
+                          <Button onClick={()=>{updateCategoria(val)}}>Ver Categoria</Button>               
+                        </td>
+                        <td className="col">
+                        <Button onClick={() => eliminarCategoria(val.Id_categoria)}>Eliminar</Button>               
+                        </td>
                     </tr>
                   ))
                  }
-
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-
-
-
     </>
   )
 }
